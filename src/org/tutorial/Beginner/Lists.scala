@@ -56,6 +56,7 @@ object Lists {
     methods("toStream")
     methods("toSet")
     methods("toSeq")
+    methods("takeWhile")
   }
   // 9 sunday
   //   monday
@@ -184,12 +185,213 @@ object Lists {
       */
       
       
+      /** Converts this collection
+       *  to sequence.
+       */ 
+      case "slice" => {
+        val k=List("a","b","c","d", "e", "f", "g", "h", "i")
+        val sequenced = k.toSeq
+        println("Slicing result "+ sequenced)
+        }
       
+      /** Converts this collection
+       *  to sequence.
+       */ 
+      case "slice" => {
+        val k=List("a","b","c","d", "e", "f", "g", "h", "i")
+        val sequenced = k.toSeq
+        println("Slicing result "+ sequenced)
+        }
+      
+      /** Gets size of  
+       *  sequence
+       */ 
+      case "size" => {
+        val k=List("a","b","c","d", "e", "f", "g", "h", "i")
+        val length = k.size
+        println("Size result "+ length)
+        }
+      
+      /** Gets Iterator of List
+       *  on the bases of window size and
+       *  the step size that is 
+       *  distance between first element
+       *  of each window.  
+       */ 
+      case "slice" => {
+        val k=List("a","b","c","d", "e", "f", "g", "h", "i")
+        val groups= k.slice(1, 3)
+        println("Slicing result "+ groups)
+        }
+      
+      /** Gets Iterator of List
+       *  on the bases of window size and
+       *  the step size that is 
+       *  distance between first element
+       *  of each window.  
+       */ 
+      case "sliding" => {
+        val k=List("a","b","c","d", "e", "f", "g", "h", "i")
+        val groups= k.sliding(2, 3)
+        println("Sliding result "+ groups)
+        }
+      
+      /** Slides the seq according  
+       *  to a condition 
+       *  function.   
+       */ 
+      case "sliding" => {
+        val k=List("a","b","c","d", "e")
+        val groups= k.sliding(2)
+        println("Sliding result "+ groups)
+        }
+      
+      /** Sorts the seq according  
+       *  to a condition 
+       *  function.   
+       */ 
+      case "sortBy" => {
+        var words="The quick brown fox jumped over the lazy dog".split(" ")
+        words.sortBy(x => (x.length(),x.head) )
+        println("Sorted by "+words)
+        }
+      
+      /** Sorts the seq according  
+       *  to a comparison 
+       *  function   
+       *  pair on the bases 
+       *  of a condition which 
+       */
+      case "sortWith" => {
+        val k=List(1,2,3,4, 5)
+        val xs = k.sortWith((a,b) => a.<=(b))
+        println("Sort with list "+xs)
+        println(List("Steve", "Tom", "John", "Bob").sortWith(_.compareTo(_)<0))
+        }
+      
+      /** Sorts the seq according  
+       *  to an ordering  
+       *  pair on the bases 
+       *  of a condition which 
+       *  is based on math.Ordering.
+       */
+      case "sorted" => {
+        val k=List("a","b","c","d", "e")
+        val xs = k.sorted
+        println("Sorted list "+xs)
+        }
+      
+      /** Splits this list into  
+       *  a predicate and suffix  
+       *  pair on the bases of
+       *  a condition.
+       */
+      case "span" => {
+        val k=List("a","b","c","d", "e")
+        val xs = k.span(p => p.length()==1)
+        println("Spanned list "+xs)
+        }
+      
+      /** Splits this list into  
+       *  a predicate and suffix  
+       *  pair on the bases of
+       *  a condition.
+       */
+      case "span" => {
+        val k=List("a","b","c","d", "e")
+        val xs = k.span(p => p.length()==1)
+        println("Spanned list "+xs)
+        }
+      
+      /** Split the list into  
+       *  two lists on the bases  
+       *  the index.
+       */
+      case "splitAt" => {
+        val k=List("a","b","c")
+        val xs = k.splitAt(2)
+        println("Split string "+xs)
+        }
+      
+      /** Checks whether a list  
+       *  has a particular element 
+       *  at particular index.
+       */
+      case "startsWith" => {
+        val k=List("a","b","c")
+        val xs = k.startsWith("a")
+        println("startsWith "+xs)
+        }
+      
+      /** Checks whether a list  
+       *  starts with a particular 
+       *  element.
+       */
+      case "startsWith" => {
+        val k=List("a","b","c")
+        val xs = k.startsWith("a")
+        println("startsWith "+xs)
+        }
+      
+      /** 
+       *  */
+      case "stringPrefix" => {
+        val k=List("a","b","c")
+        val xs = k.stringPrefix
+        println("stringPrefix "+xs)
+        }
+      
+      /** Sums up the  
+       *  elements of this 
+       *  collection.
+       */
+      case "sum" => {
+        val k=List(1,2,3)
+        val xs = k.sum
+        println("Sum "+xs)
+        }
       
       /** Returns a List 
-       *  by converting 1 list
-       *  to another
-       *  of the collection.
+       *  of all elements 
+       *  except the first.
+       */
+      case "take" => {
+        val k=List("a","b","c")
+        val xs = k.tail
+        println("Take "+xs)
+        }
+      
+      /** Returns a List 
+       *  after taking n first elements.
+       */
+      case "take" => {
+        val k=List("a","b")
+        val xs = k.take(1)
+        println("Take first one's"+xs)
+        }
+      
+      /** Returns a List 
+       *  after taking n right elements.
+       */
+      case "takeRight" => {
+        val k=List("a","b")
+        val xs = k.takeRight(1)
+        println("Take right "+xs)
+        }
+      
+      /** Returns a List 
+       *  after checking the
+       *  condition.
+       */
+      case "takeWhile" => {
+        val k=List("a","b")
+        val xs = k.takeWhile(p=> p.contains("a"))
+        println("To Iterator "+xs)
+        }
+      
+      /** Returns a List 
+       *  after checking the
+       *  condition.
        */
       case "takeWhile" => {
         val k=List("a","b")
@@ -285,21 +487,25 @@ object Lists {
        *  But only if the values 
        *  are members of Tuple2.   
        */
+      /*
       case "toMap" => {
         val k=("a","b")
         val xs = k.toMap
         println("To Map "+xs)
         }
-      
+      */
       /** Returns a Map 
        *  of the collection.   
        *  
        */
+      /*
       case "toMap" => {
         val k=List("a","b","c")
         val xs = k.toMap
         println("To Map "+xs)
         }
+        * 
+        */
       ///////
       /** Returns a seq 
        *  of the collection.   
@@ -504,3 +710,4 @@ object Lists {
       }
     }    
   }
+}
