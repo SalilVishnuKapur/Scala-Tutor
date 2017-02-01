@@ -185,19 +185,103 @@ object Lists {
       */
       
       
-      /** Converts this collection
-       *  to sequence.
+      
+      /** Returns a reversed
+       *  list.
        */ 
-      case "slice" => {
+      case "reverse" => {
         val k=List("a","b","c","d", "e", "f", "g", "h", "i")
-        val sequenced = k.toSeq
-        println("Slicing result "+ sequenced)
+        val result = k.reverse
+        println("Result "+ result)
+        }
+      
+      /** Returns a reversed
+       *  iterator as a collection.
+       */ 
+      case "reverseIterator" => {
+        val k=List("a","b","c","d", "e", "f", "g", "h", "i")
+        val result = k.reverseIterator
+        println("Result "+ result)
+        }
+      
+      /** Reverses the list
+       *  after applying a 
+       *  map to every element. 
+       */ 
+      case "reverseMap" => {
+        val k=List("a","b","c","d", "e", "f", "g", "h", "i")
+        val result = k.reverseMap(f => f.length())
+        println("Result "+ result)
+        }
+      
+      /** Reverses the list. 
+       */ 
+      case "reverse" => {
+        val k=List("a","b","c","d", "e", "f", "g", "h", "i")
+        val result = k.reverse
+        println("Result "+ result)
+        }
+      
+      /** Adds the elements to another 
+       *  list by reversing them.
+       */ 
+      case "runWith" => {
+        val k=List("a","b","c","d", "e", "f", "g", "h", "i")
+        val result = k.sameElements(List("a","b","c","d", "e", "f", "g", "h", "i"))
+        println("Result "+ result)
+        }
+      
+      /** Compares the two collections.
+       */ 
+      case "sameElements" => {
+        val k=List("a","b","c","d", "e", "f", "g", "h", "i")
+        val result = k.sameElements(List("a","b","c","d", "e", "f", "g", "h", "i"))
+        println("Result "+ result)
+        }
+      
+      /** Computes this collections
+       *  cumulative result scanning 
+       *  from left to right 
+       *  segment length.
+       */ 
+      case "scan" => {
+        val k=List("a","b","c","d", "e", "f", "g", "h", "i")
+        println(k.scan("abc")(_+_))
+        }
+      
+      /** Computes this collections
+       *  cumulative result scanning 
+       *  from left to right 
+       *  segment length.
+       */ 
+      case "scanLeft" => {
+        val k=List("a","b","c","d", "e", "f", "g", "h", "i")
+        println(k.scanLeft("x":String)(_+_))
+        }
+      
+      /** Computes this collections
+       *  cumulative result scanning 
+       *  from right to left 
+       *  segment length.
+       */ 
+      case "scanRight" => {
+        val k=List("a","b","c","d", "e", "f", "g", "h", "i")
+        println(k.scanRight("x":String)(_+_))
+        }
+      
+      /** Computes this collections
+       *  segment length.
+       */ 
+      case "segmentLength" => {
+        val k=List("a","b","c","d", "e", "f", "g", "h", "i")
+        val segmentLength = k.segmentLength(p=> p.length()==1, 2)
+        println("Slicing result "+ segmentLength)
         }
       
       /** Converts this collection
        *  to sequence.
        */ 
-      case "slice" => {
+      case "seq" => {
         val k=List("a","b","c","d", "e", "f", "g", "h", "i")
         val sequenced = k.toSeq
         println("Slicing result "+ sequenced)
