@@ -168,8 +168,8 @@ object Lists {
       
         
     
-       //   val k=List("a","b","c").aggregate(z)(seqop, combop)
-       //   println(k)    
+      //   val k=List("a","b","c").aggregate(z)(seqop, combop)
+      //   println(k)    
       
      
       /*
@@ -184,7 +184,197 @@ object Lists {
       * 
       */
       
+     
       
+      
+     
+     /** Returns a partial 
+      *  function with a fallback
+      *  partial function which 
+      *  gets applied where this
+      *  partial function is not defined.  
+      */  
+      def k(a:String){ a => }
+      case "orElse" => {
+        val k = List(1, 2, 3, 4, 5, 6, 7, 8, 9)
+        val result = k
+        println("Result "+ result)
+      } 
+      
+     // Partial Function :- A function which does not return output on every input value. 
+     /** Returns a partial 
+      *  function with a fallback
+      *  partial function which 
+      *  gets applied where this
+      *  partial function is not defined.  
+      */    
+      var divide = (x: Int) => 42 / x
+      case "orElse" => {
+        val k = List(1, 2, 3, 4, 5, 6, 7, 8, 9)
+        val result = k.orElse(divide(1))
+        println("Result "+ result)
+      }
+      
+     /** Returns a copy of 
+      *  this list with an 
+      *  element value appended
+      *  to it.
+      */ 
+      case "padTo" => {
+        val k = List(1, 2, 3, 4, 5, 6, 7, 8, 9)
+        val result = k.padTo(14, 10)
+        println("Result "+ result)
+      }
+      
+      /** Returns a parallel
+       *  implementation of this
+       *  collection. 
+       */ 
+      case "par" => {
+        val k = List(1, 2, 3, 4, 5, 6, 7, 8, 9)
+        val result = k.par
+        println("Result "+ result)
+      }
+      
+      /** Partitions the collection 
+       *  into two traversable 
+       *  collections. 
+       */ 
+      case "partition" => {
+        val k = List(1, 2, 3, 4, 5, 6, 7, 8, 9)
+        val result = k.partition {x => ((x % 2) == 0)}
+        println("Result "+ result)
+      }    
+      
+      /** Returns the slice
+       *  combinations of the list.
+       */ 
+      case "patch" => {
+        val k=List(1,(1,1,1),3,4, 5, 6, 7, 8, 9)
+        val result = k.patch(0, Seq(77,88,99,100), 5)
+        println("Result "+ result)
+        }
+      
+      /** Returns the permutation
+       *  combinations of the list.
+       */ 
+      case "permutations" => {
+        val k=List(1,(1,1,1),3,4, 5, 6, 7, 8, 9)
+        val result = k.permutations
+        println("Result "+ result)
+        }      
+      
+      /** Returns the length
+       *  of the longest prefix
+       *  which satisfy some
+       *  predicate. 
+       */ 
+      case "prefixLength" => {
+        val k=List(1,(1,1,1),3,4, 5, 6, 7, 8, 9)
+        val result = k.prefixLength { x => true }
+        println("Result "+ result)
+        }
+      
+      /** Returns a product 
+       *  of all the elements.
+       */ 
+      case "product" => {
+        val k=List(1,2,3,4, 5, 6, 7, 8, 9)
+        val result = k.product
+        println("Result "+ result)
+        }
+      
+      /** Returns a iterator 
+       *  over all the elements.
+       */ 
+      case "productIterator" => {
+        val k=List("a","b","c","d", "e", "f", "g", "h", "i")
+        val result = k.productIterator
+        println("Result "+ result)
+        }
+      
+      /** Returns a string 
+       *  is equivalent to 
+       *  toString.
+       */ 
+      case "productPrefix" => {
+        val k=List("a","b","c","d", "e", "f", "g", "h", "i")
+        val result = k.productPrefix
+        println("Result "+ result)
+        }
+      
+      /** Returns a reduced 
+       *  option of the same
+       *  with operator applied
+       *  to all the elements of same type.
+       */ 
+      case "reduce" => {
+        val k=List("a","b","c","d", "e", "f", "g", "h", "i")
+        val result = k.reduce((A,B) =>A)
+        println("Result "+ result)
+        }
+      
+      /** Returns a reduced 
+       *  option of the same
+       *  with operator applied
+       *  to all the elements of same type.
+       */ 
+      case "reduceLeft" => {
+        val k=List("a","b","c","d", "e", "f", "g", "h", "i")
+        val result = k.reduceOption((A,B) =>A)
+        println("Result "+ result)
+        }
+      
+      /** Returns a reduced 
+       *  option of the same
+       *  with operator applied
+       *  to all the elements of same type.
+       */ 
+      case "reduceLeftOption" => {
+        val k=List("a","b","c","d", "e", "f", "g", "h", "i")
+        val result = k.reduceLeftOption((A,B) =>A)
+        println("Result "+ result)
+        }
+      
+      /** Returns a reduced 
+       *  option of the same
+       *  with operator applied
+       *  to all the elements of same type.
+       */ 
+      case "reduceRight" => {
+        val k=List("a","b","c","d", "e", "f", "g", "h", "i")
+        val result = k.reduceOption((A,B) =>A)
+        println("Result "+ result)
+        }
+      
+      /** Returns a reduced 
+       *  result of the same
+       *  with operator applied
+       *  to all the elements.
+       */ 
+      case "reduceRight" => {
+        val k=List("a","b","c","d", "e", "f", "g", "h", "i")
+        val result = k.reduceRight((A,B) =>A)
+        println("Result "+ result)
+        }
+      
+      /** Returns a reduced 
+       *  result of the same.
+       */ 
+      case "reduceRightOption" => {
+        val k=List("a","b","c","d", "e", "f", "g", "h", "i")
+        val result = k.reduceRightOption((A,B)=> B)
+        println("Result "+ result)
+        }
+      
+      /** Returns a traversable 
+       *  object of the same.
+       */ 
+      case "repr" => {
+        val k=List("a","b","c","d", "e", "f", "g", "h", "i")
+        val result = k.repr
+        println("Result "+ result)
+        }
       
       /** Returns a reversed
        *  list.
