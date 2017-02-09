@@ -158,13 +158,20 @@ object Lists {
        // println(k)
         }
       
-      //
       case "combinations"  => {
         val k=List('a','b','c').combinations(10)
         println("Combinations " + k)
         }
       
+      case "companion"  => {
+        val k=List('a','b','c').companion
+        println("Companion " + k)
+        }
       
+      case "companion"  => {
+        val k=List('a','b','c').companion
+        println("Companion " + k)
+        }
       
         
     
@@ -183,35 +190,698 @@ object Lists {
       }
       * 
       */
-      
+     
+     
      
       
-      
      
+     /** Counts the number of 
+      *  elements.
+      */
+      case "count" => {
+        val k = List(1, 2, 3, 4, 5, 6)
+        val result = k.count { x => (x%2)==0 }
+        println("Result "+ result)
+      } 
+      
+     /** Computes the multiset 
+      *  difference between this
+      *  list and another sequence.
+      */
+      case "diff" => {
+        val k = List(1, 2, 3, 4, 5, 6)
+        val result = k.diff(List(1,2))
+        println("Result "+ result)
+      } 
+     
+     /** Builds a new sequence 
+      *  from this sequence 
+      *  without any duplicates.
+      */
+      case "distinct" => {
+        val k = List(1, 2, 3, 4, 5, 6)
+        val result = k.distinct
+        println("Result "+ result)
+      } 
+      
+     /** Select all the elements 
+      *  except the first n ones.
+      */
+      case "drop" => {
+        val k = List(1, 2, 3, 4, 5, 6)
+        val result = k.drop(2)
+        println("Result "+ result)
+      } 
+     
+     /** Tests whether this 
+      *  sequence ends with 
+      *  the given sequence.
+      */
+      case "dropRight" => {
+        val k = List(1, 2, 3, 4, 5, 6)
+        val result = k.dropWhile{x => }
+        println("Result "+ result)
+      } 
+      
+     /** Tests whether this 
+      *  sequence ends with 
+      *  the given sequence.
+      */
+      case "dropWhile" => {
+        val k = List(1, 2, 3, 4, 5, 6)
+        val result = k.dropWhile{x => }
+        println("Result "+ result)
+      }
+      
+     /** Tests whether this 
+      *  sequence ends with 
+      *  the given sequence.
+      */
+      case "endsWith" => {
+        val k = List(1, 2, 3, 4, 5, 6)
+        val result = k.endsWith(Seq(6))
+        println("Result "+ result)
+      } 
+     
+     /** Compares this sequence to 
+      *  some other object.
+      */
+      case "equals" => {
+        val k = List(1, 2, 3, 4, 5, 6)
+        val result = k.equals{ List(1,2,3,4,5,6) }
+        println("Result "+ result)
+      } 
+      
+     /** Selects all elements of this 
+      *  traversable collection which
+      *  satisfy a predicate.
+      */
+      case "exists" => {
+        val k = List(1, 2, 3, 4, 5, 6)
+        val result = k.exists{ x => (x%2)==0 }
+        println("Result "+ result)
+      } 
+      
+     /** Selects all elements of this 
+      *  traversable collection which
+      *  satisfy a predicate.
+      */
+      case "filter" => {
+        val k = List(1, 2, 3, 4, 5, 6)
+        val result = k.filter{ x => (x%2)==0 }
+        println("Result "+ result)
+      } 
+      
+     /** Selects all elements of this 
+      *  traversable collection which
+      *  do not satisfy a predicate.
+      */
+      case "filterNot" => {
+        val k = List(1, 2, 3, 4, 5, 6)
+        val result = k.filterNot{ x => (x%2)==0 }
+        println("Result "+ result)
+      }
+      
+     /** Finds the first element of the 
+      *  sequence satisfying a predicate.
+      */
+      case "find" => {
+        val k = List(1, 2, 3, 4, 5, 6)
+        val result = k.find{ x => (x%2)==0 }
+        println("Result "+ result)
+      }  
+      
+     /** Builds a new collection by
+      *  applying a function to all elements 
+      *  of this list.
+      */
+      case "flatMap" => {
+        val k = Map("a" -> List(11,111), "b" -> List(22,222))
+        val result = k.flatMap(_._2)
+        println("Result "+ result)
+      } 
+      
+     /** A new list resulting from 
+      *  concatenating all elements of
+      *  lists.
+      */
+      case "flatten" => {
+        val k = List(Set(1,2,3), Set(1,2,3))
+        val result = k.flatten
+        println("Result "+ result)
+      } 
+      
+     /** Folds the elements of this
+      *  traversable or iterator using 
+      *  specified associative binary 
+      *  operator.
+      */
+      case "fold" => {
+        val k = List(1, 2, 3, 4, 5, 6)
+        val result = k.fold(Nil)((A,B)=>B)
+        println("Result "+ result)
+      } 
+      
+     /** Applies a binary operator 
+      *  to a start value and all the
+      *  elements in sequence going
+      *  from right to left.
+      */
+      case "foldLeft" => {
+        val k = List(1, 2, 3, 4, 5, 6)
+        val result = k.foldLeft(1)((A,B)=>B*2)
+        println("Result "+ result)
+      }
+     
+     /** Applies a binary operator 
+      *  to a start value and all the
+      *  elements in sequence going
+      *  from right to left.
+      */
+      case "foldRight" => {
+        val k = List(1, 2, 3, 4, 5, 6)
+        val result = k.foldRight(1)((A,B)=>B*2)
+        println("Result "+ result)
+      } 
+      
+     /** This returns true if the 
+      *  predicate is satisfied 
+      *  for all the values of the collection.
+      */
+      case "forall" => {
+        val k = List(1, 2, 3, 4, 5, 6)
+        val result = k.forall{x => (x%2)==0 }
+        println("Result "+ result)
+      } 
+     
+     /** This iterates through all
+      *  the values of the list.
+      */
+      case "foreach" => {
+        val k = List(1, 2, 3, 4, 5, 6)
+        val result = k.foreach{x => x*2}
+        println("Result "+ result)
+      } 
+      
+     /** The generic builder that builds 
+      *  instances of traversable Partitions elements in
+      *  fixed size iterable collection.
+      */
+      case "genericBuilder" => {
+        val k = List(1, 2, 3, 4, 5, 6)
+        val result = k.genericBuilder
+        println("Result "+ result)
+      } 
+      
+     /** Partitions elements in
+      *  fixed size iterable collection.
+      */
+      case "groupBy" => {
+        val k = List(1, 2, 3, 4, 5, 6)
+        val result = k.groupBy { x => (x%2)==0 }
+        println("Result "+ result)
+      } 
+      
+     /** Partitions elements in
+      *  fixed size iterable collection.
+      */
+      case "grouped" => {
+        val k = List(1, 2, 3, 4, 5, 6)
+        val result = k.grouped(2)
+        println("Result "+ result)
+      } 
+      
+     /** Selects the first element of
+      *  this iterable collection.
+      */
+      case "hasDefiniteSize" => {
+        val k = List(1, 2, 3, 4, 5, 6)
+        val result = k.hasDefiniteSize
+        println("Result "+ result)
+      } 
+      
+     /** Selects the first element of
+      *  this iterable collection.
+      */
+      case "hashCode" => {
+        val k = List(1, 2, 3, 4, 5, 6)
+        val result = k.hashCode()
+        println("Result "+ result)
+      } 
+     
+     /** Selects the first element of
+      *  this iterable collection.
+      */
+      case "headOption" => {
+        val k = List(1, 2, 3, 4, 5, 6)
+        val result = k.head
+        println("Result "+ result)
+      } 
+      
+     /** Finds the first element 
+      *  of this traversable list but
+      *  if empty then None.
+      */
+      case "headOption" => {
+        val k = List(1, 2, 3, 4, 5, 6)
+        val result = k.headOption
+        println("Result "+ result)
+      }
+      
+     /** Finds the first element 
+      *  of this traversable list but
+      *  if empty then None.
+      */
+      case "headOption" => {
+        val k = List(1, 2, 3, 4, 5, 6)
+        val result = k.headOption
+        println("Result "+ result)
+      } 
+      
+     /** Finds index of first occurrence
+      *  of some value in the list
+      *  after or at some start index.
+      */
+      case "indexOf" => {
+        val k = List(1, 2, 3, 4, 5, 6)
+        val result = k.indexOf(2, 3)
+        println("Result "+ result)
+      } 
+      
+     /** Finds index of first occurrence
+      *  of some value in the list.
+      */
+      case "indexOf" => {
+        val k = List(1, 2, 3)
+        val result = k.indexOf(2)
+        println("Result "+ result)
+      } 
+      
+     /** Finds the first index
+      *  after or at start index
+      *  where this seq contains a 
+      *  given slice.
+      */
+      case "indexOfSlice" => {
+        val k = List(1, 2, 3)
+        val result = k.indexOfSlice(Seq(3),1)
+        println("Result "+ result)
+      } 
+      
+     /** Finds the first index
+      *  after or at start index
+      *  where this seq contains a 
+      *  given slice.
+      */
+      case "indexOfSlice" => {
+        val k = List(1, 2, 3)
+        val result = k.indexOfSlice(Seq(3),1)
+        println("Result "+ result)
+      } 
+      
+     /** Finds the first index
+      *  where this sequence 
+      *  contains a given 
+      *  sequence as 
+      *  slice.
+      */
+      case "indexOfSlice" => {
+        val k = List(1, 2, 3)
+        val result = k.indexOfSlice(Seq(2))
+        println("Result "+ result)
+      }  
+       
+     /** Finds the index of
+      *  the first element
+      *  satisfying some 
+      *  predicate after
+      *  or at some start
+      *  index.
+      */
+      case "indexWhere" => {
+        val k = List(1, 2, 3)
+        val result = k.indexWhere(x => (x%2!=0),1 )
+        println("Result "+ result)
+      } 
+      
+     /** Finds the index of
+      *  the first element
+      *  satisfying some 
+      *  predicate.
+      */
+      case "indexWhere" => {
+        val k = List(1, 2, 3)
+        val result = k.indexWhere(x => (x%2!=0) )
+        println("Result "+ result)
+      } 
+      
+     /** Produces the range 
+      *  of all indices of
+      *  this sequence.
+      */
+      case "indices" => {
+        val k = List(1, 2, 3)
+        val result = k.indices
+        println("Result "+ result)
+      } 
+      
+     /** Produces the range 
+      *  of all indices of
+      *  this sequence.
+      */
+      case "indices" => {
+        val k = List(1, 2, 3)
+        val result = k.indices
+        println("Result "+ result)
+      }
+     
+     /** Selects all the 
+      *  elements except the
+      *  last one.
+      */
+      case "init" => {
+        val k = List(1, 2, 3)
+        val result = k.init
+        println("Result "+ result)
+      } 
+      
+     /** Creates a iterator
+      *  of the list.
+      */
+      case "inits" => {
+        val k = List(1, 2, 3)
+        val result = k.inits
+        println("Result "+ result)
+      } 
+      
+     /** Computes a multiset
+      *  interaction between 
+      *  this list and another 
+      *  sequence.
+      */
+      case "intersect" => {
+        val k = List(1, 2, 3, 4, 5, 2, 7, 8, 9)
+        val result = k.intersect(Seq(3,100,2))
+        println("Result "+ result)
+      }
+      
+     /** Checks whether this
+      *  seq contains given
+      *  index.
+      */
+      case "isDefinedAt" => {
+        val k = List(1, 2, 3, 4, 5, 2, 7, 8, 9)
+        val result = k.isDefinedAt(1)
+        println("Result "+ result)
+      } 
+      
+     /** Checks whether this
+      *  seq is empty or
+      *  not.
+      */
+      case "isEmpty" => {
+        val k = List(1, 2, 3, 4, 5, 2, 7, 8, 9)
+        val result = k.isEmpty
+        println("Result "+ result)
+      }
+      
+     /** Checks whether this
+      *  traversable collection 
+      *  can be repeatedly traversed. 
+      */
+      case "isTraversableAgain" => {
+        val k = List(1, 2, 3, 4, 5, 2, 7, 8, 9)
+        val result = k.isTraversableAgain
+        println("Result "+ result)
+      }
+      
+     /** Creates a new iterator.    
+      */  
+      case "iterator" => {
+        val k = List(1, 2, 3, 4, 5, 2, 7, 8, 9)
+        val result = k.iterator
+        println("Result "+ result)
+      } 
+     
+     /** Finds the last element.    
+      */  
+      case "last" => {
+        val k = List(1, 2, 3, 4, 5, 2, 7, 8, 9)
+        val result = k.last
+        println("Result "+ result)
+      }
+      
+     /** Finds the last index
+      *  of some value in this
+      *  list before some last index.   
+      */  
+      case "lastIndexOf" => {
+        val k = List(1, 2, 3, 4, 5, 2, 7, 8, 9)
+        val result = k.lastIndexOf(2, 7)
+        println("Result "+ result)
+      } 
+      
+     /** Finds the last index
+      *  of some value in this list.   
+      */  
+      case "lastIndexOf" => {
+        val k = List(1, 2, 3, 4, 5, 2, 7, 8, 9)
+        val result = k.lastIndexOf(2)
+        println("Result "+ result)
+      } 
+      
+     /** Finds the last index
+      *  where this sequence contains 
+      *  a given sequence before end index
+      *  as slice.  
+      */  
+      case "lastIndexOfSlice" => {
+        val k = List(1, 2, 3, 4, 5, 6, 7, 8, 9)
+        val result = k.lastIndexOfSlice(Seq(1) , 10)
+        println("Result "+ result)
+      } 
+      
+     /** Finds the last index
+      *  where this sequence contains 
+      *  a given sequence as slice.  
+      */  
+      case "lastIndexOfSlice" => {
+        val k = List(1, 2, 3, 4, 5, 6, 7, 8, 9)
+        val result = k.lastIndexOfSlice(Seq(1))
+        println("Result "+ result)
+      } 
+      
+     /** Finds the last index
+      *  where this sequence contains 
+      *  a given sequence as slice.  
+      */  
+      case "lastIndexWhere" => {
+        val k = List(1, 2, 3, 4, 5, 6, 7, 8, 9)
+        val result = k.lastIndexWhere( x => (x%2)==0 ,10 )
+        println("Result "+ result)
+      } 
+      
+     /** Gets the index of the
+      *  last element which 
+      *  satisfy this before or 
+      *  equal to the last value.  
+      */  
+      case "lastIndexWhere" => {
+        val k = List(1, 2, 3, 4, 5, 6, 7, 8, 9)
+        val result = k.lastIndexWhere( x => (x%2)==0 ,10 )
+        println("Result "+ result)
+      }
+      
+     /** Gets the index of the
+      *  last element which 
+      *  satisfy this.  
+      */  
+      case "lastIndexWhere" => {
+        val k = List(1, 2, 3, 4, 5, 6, 7, 8, 9)
+        val result = k.lastIndexWhere { x => (x%2)==0 }
+        println("Result "+ result)
+      }
+     
+     /** Gets the index of the
+      *  last element which 
+      *  satisfy this.  
+      */  
+      case "lastIndexWhere" => {
+        val k = List(1, 2, 3, 4, 5, 6, 7, 8, 9)
+        val result = k.lastIndexWhere { x => (x%2)==0 }
+        println("Result "+ result)
+      }
+      
+     /** Finds the last element 
+      *  in case it is empty then
+      *  fetches None.  
+      */  
+      case "lastOption" => {
+        val k = List(1, 2, 3, 4, 5, 6, 7, 8, 9)
+        val result = k.lastOption
+        println("Result "+ result)
+      }
+      
+     /** Finds the length 
+      *  of this sequence.
+      */  
+      case "length" => {
+        val k = List(1, 2, 3, 4, 5, 6, 7, 8, 9)
+        val result = k.length
+        println("Result "+ result)
+      }
+      
+      //** 
+     /** Compares the length 
+      *  of this seq to a test
+      *  value.
+      */  
+      case "lengthCompare" => {
+        val k = List(1, 2, 3, 4, 5, 6, 7, 8, 9)
+        val result = k.lengthCompare(15)
+        println("Result "+ result)
+      }
+      
+     //** 
+     /** Builds a new collection
+      *  by applying map to all elements 
+      *  of this list.
+      */  
+      case "lift" => {
+        val k = List(1, 2, 3, 4, 5, 6, 7, 8, 9)
+        val result = k.lift(1)
+        println("Result "+ result)
+      }
+      
+     /** Builds a new collection
+      *  by applying map to all elements 
+      *  of this list.
+      */  
+      case "map" => {
+        val k = List(1, 2, 3, 4, 5, 6, 7, 8, 9)
+        val result = k.map(m => m*2 )
+        println("Result "+ result)
+      }
+     
+      //****
+     /** Returns the largest 
+      *  element.
+      */  
+      case "mapConverse" => {
+        val k = List(1, 2, 3, 4, 5, 6, 7, 8, 9)
+        val result = k.mapConserve{x => x}
+        println("Result "+ result)
+      }
+      
+     /** Returns the largest 
+      *  element.
+      */  
+      case "max" => {
+        val k = List(1, 2, 3, 4, 5, 6, 7, 8, 9)
+        val result = k.max
+        println("Result "+ result)
+      }
+      
+     /** Returns the first element
+      *  which yields the largest
+      *  value which satisfy the 
+      *  function. 
+      */  
+      case "maxBy" => {
+        val k = List(1, 2, 3, 4, 5, 6, 7, 8, 9)
+        val result = k.minBy { x => (x%2==0) }
+        println("Result "+ result)
+      }
+      
+     /** Returns the smallest 
+      *  element.
+      */  
+      case "min" => {
+        val k = List(1, 2, 3, 4, 5, 6, 7, 8, 9)
+        val result = k.min
+        println("Result "+ result)
+      }
+      
+     /** Returns the first element
+      *  which yields the smallest
+      *  value which satisfy the 
+      *  function. 
+      */  
+      case "minBy" => {
+        val k = List(1, 2, 3, 4, 5, 6, 7, 8, 9)
+        val result = k.minBy { x => (x%2==0) }
+        println("Result "+ result)
+      }
+      
+     /** Returns all elements of 
+      *  this traversable using 
+      *  separator string. 
+      */  
+      case "mkString" => {
+        val k = List(1, 2, 3, 4, 5, 6, 7, 8, 9)
+        val result = k.mkString
+        println("Result "+ result)
+      }
+      
+     /** Returns all elements of 
+      *  this traversable using 
+      *  separator string. 
+      */  
+      case "mkString" => {
+        val k = List(1, 2, 3, 4, 5, 6, 7, 8, 9)
+        val result = k.mkString("|")
+        println("Result "+ result)
+      }
+      
+     /** Returns all elements of 
+      *  this traversable or iterator 
+      *  in a string using start, end
+      *  and separator string. 
+      */  
+      case "mkString" => {
+        val k = List(1, 2, 3, 4, 5, 6, 7, 8, 9)
+        val result = k.mkString("(", ";", ")")
+        println("Result "+ result)
+      } 
+      
      /** Returns a partial 
       *  function with a fallback
       *  partial function which 
       *  gets applied where this
       *  partial function is not defined.  
       */  
-      def k(a:String){ a => }
-      case "orElse" => {
+      case "nonEmpty" => {
         val k = List(1, 2, 3, 4, 5, 6, 7, 8, 9)
-        val result = k
+        val result = k.nonEmpty
         println("Result "+ result)
       } 
       
-     // Partial Function :- A function which does not return output on every input value. 
+     //Partial Function :- A function which does not return output on every input value.
+     // It provides an answer only for a subset of possible data, and defines the data it can handle.
+     // In Scala, a partial function can also be queried to determine if it can handle a particular value.
      /** Returns a partial 
       *  function with a fallback
       *  partial function which 
       *  gets applied where this
       *  partial function is not defined.  
       */    
-      var divide = (x: Int) => 42 / x
       case "orElse" => {
+           // converts 1 to "one", etc., up to 5
+           val convert1to5 = new PartialFunction[Int, String] {
+             val nums = Array("one", "two", "three", "four", "five")
+             def apply(i: Int) = nums(i-1)
+             def isDefinedAt(i: Int) = i > 0 && i < 6
+            }
+
+           // converts 6 to "six", etc., up to 10
+           val convert6to10 = new PartialFunction[Int, String] {
+             val nums = Array("six", "seven", "eight", "nine", "ten")
+             def apply(i: Int) = nums(i-6)
+             def isDefinedAt(i: Int) = i > 5 && i < 11
+            }
+
         val k = List(1, 2, 3, 4, 5, 6, 7, 8, 9)
-        val result = k.orElse(divide(1))
+        val result =  convert1to5 orElse convert6to10
         println("Result "+ result)
       }
       
