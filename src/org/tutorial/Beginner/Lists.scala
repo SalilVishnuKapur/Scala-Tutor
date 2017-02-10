@@ -31,8 +31,6 @@ object Lists {
 
     // Accessing an element of List
     println(k.apply(0))
-    
-    week("Start")
     methods("++")
     methods("++:")
     methods("++:")
@@ -57,49 +55,43 @@ object Lists {
     methods("toSet")
     methods("toSeq")
     methods("takeWhile")
-  }
-  // 9 sunday
-  //   monday
-  def week(trigger : String)
-  {
-    // Make a list via the companion object factory
-    val days = List("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday")
     
-    // Make a list element-by-element
-    val when = "AM" :: "PM" :: List()
-    
-    // Pattern match
-    days match {
-    case firstDay :: otherDays =>
-    println("The first day of the week is: " + firstDay)
-    case List() =>
-    println("There don't seem to be any week days.")
-    }
   }
+  
   
   def methods(trigger: String) 
   {
     trigger match {
       
+      /** 
+       * 
+       */ 
       case "++"  => {
           val k=List("a","b","c").++(List("d"))
           println(k)    
       }
+     
+      /** 
+       * 
+       */
       case "++:"  => {
           val k=List("a","b","c").++:(List("d"))
           println(k)    
       }
-      case "++:"  => {
-          val k=List("a","b","c").++:(List("d"))
-          println(k)    
-      }
-      // An element is prepended to the list
+      
+      /** An element is prepended 
+       *  to the list. 
+       */
       case "+:"  => {
           val k=List("a","b","c").+:("d")
           println(k)    
       }
+      
+      /** 
+       * 
+       */
       case "/:"  => {
-          //val k=List("a","b","c")./:(z)(op)
+          val k=List("a","b","c")./
         //  println(k)    
       }
       case "addString"  => {
