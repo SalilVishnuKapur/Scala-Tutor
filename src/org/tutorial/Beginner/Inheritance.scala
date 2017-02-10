@@ -12,7 +12,7 @@ package org.tutorial.Beginner
 
 
 
-class ParentClass extends abClass {
+class ParentClass  {
 
 	def availableToys(name : String):String =
 	{
@@ -58,7 +58,7 @@ class ParentClass extends abClass {
 
 }
 
-object Inheritence extends ParentClass with abClass  {    
+object Inheritence extends ParentClass  {    
   
   def main(args : Array[String]) :String = 
   {
