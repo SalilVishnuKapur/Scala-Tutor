@@ -10,7 +10,8 @@ object Accumulators {
     .setAppName("Accumulators")
     .set("spark.executor.extraJavaOptions", "-XX:+UseG1GC")
     var sc = new SparkContext(sparkConf)
-    var accum = sc.Accumulators
+    var accum = sc.Accumulator(0 , "My Accumulator")
     sc.parallelize(0 until 10, 10).foreach(x => accum += 1)
+    accum.value
   }
 }
